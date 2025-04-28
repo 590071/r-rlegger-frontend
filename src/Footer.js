@@ -10,7 +10,7 @@ function Footer() {
             fontSize: '14px',
             marginTop: '30px'
         }}>
-            <p>© {new Date().getFullYear()} Rørleggerfirma Karl & Co. Alle rettigheter reservert.</p>
+            <p>© {new Date().getFullYear()} K.H Rørlegger. Alle rettigheter reservert.</p>
         </footer>
     );
 }

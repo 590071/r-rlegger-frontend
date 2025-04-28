@@ -5,7 +5,7 @@ import './StickyPhoneButton.css';
 function StickyPhoneButton() {
     return (
         <>
-            <a href="tel:12345678" className="sticky-call-button">
+            <a href="tel:92696285" className="sticky-call-button">
                 📞 Ring nå
             </a>
             <Link to="contact" smooth={true} duration={500} offset={-70}>

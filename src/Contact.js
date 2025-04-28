@@ -11,9 +11,8 @@ function Contact() {
             }}>
                 <h2>Kontakt oss</h2>
                 <div style={{ fontSize: '20px', lineHeight: '2' }}>
-                    <p>📞 <a href="tel:12345678" style={{ color: '#007BFF' }}>123 45 678</a></p>
-                    <p>📧 <a href="mailto:post@rorleggerfirma.no" style={{ color: '#007BFF' }}>post@rorleggerfirma.no</a></p>
-                    <p>📍 Rørveien 12, 1234 Vannstad</p>
+                    <p>📞 <a href="tel:92696285" style={{ color: '#007BFF' }}>92696285</a></p>
+                    <p>📧 <a href="mailto:dognvakt@service.no" style={{ color: '#007BFF' }}>dognvakt@service.no</a></p>
                 </div>
             </section>
         </Fade>
