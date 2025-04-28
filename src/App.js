@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Hero from './Hero';
+import Hello from './Hello';
+import Services from "./Services";
+import Contact from "./Contact";
+import ContactForm from "./ContactForm";
+import Footer from "./Footer";
+import StickyPhoneButton from "./StickyPhoneButton";
+import Header from "./Header";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Header /> {/* 👈 NY */}
+            <Hero />
+            <Services />
+            <ContactForm /> {/* Her legger vi skjemaet */}
+            <Contact />
+            <Footer /> {/* 👈 Footer helt nederst */}
+            <StickyPhoneButton /> {/* Sticky knapp legges helt nederst */}
+        </div>
+    );
 }
 
 export default App;

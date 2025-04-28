@@ -1,0 +1,55 @@
+.hero {
+    background:
+            linear-gradient(rgba(0, 123, 255, 0.6), rgba(0, 123, 255, 0.6)),
+            url('/bilde.png') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 150px 20px;
+    background-attachment: fixed;
+}
+
+
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.ring-knapp {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #28a745; /* Grønn */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.ring-knapp:hover {
+    background-color: #34c759; /* Lysere grønn på hover */
+}
+
+.kontakt-knapp {
+    margin-top: 10px;
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: white;
+    color: #007BFF;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.kontakt-knapp:hover {
+    background-color: #007BFF;
+    color: white;
+}

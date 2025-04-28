@@ -1,0 +1,40 @@
+.sticky-call-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.sticky-call-button:hover {
+    background-color: #34c759;
+}
+
+.sticky-contact-button {
+    position: fixed;
+    bottom: 80px; /* 👈 Høyere opp enn ringeknappen */
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sticky-contact-button:hover {
+    background-color: #3399ff;
+}
