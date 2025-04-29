@@ -10,7 +10,7 @@ function ContactForm() {
             <h2>Send oss en melding</h2>
 
             <form
-                action="https://formsubmit.co/karl.horn@gmail.com"
+                action="https://formsubmit.co/77knudsen@gmail.com"
                 method="POST"
                 style={{
                     maxWidth: '500px',
