@@ -10,17 +10,20 @@ function ContactForm() {
             <h2>Send oss en melding</h2>
 
             <form
-                action="https://formsubmit.co/77knudsen@gmail.com"
-                method="POST"
-                style={{
-                    maxWidth: '500px',
-                    margin: '0 auto',
-                    padding: '30px',
-                    backgroundColor: 'white',
-                    borderRadius: '8px',
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
-                }}
+            action="https://formsubmit.co/el/sogjjo" method="POST">
+
+            method="POST"
             >
+
+                style={{
+                maxWidth: '500px',
+                margin: '0 auto',
+                padding: '30px',
+                backgroundColor: 'white',
+                borderRadius: '8px',
+                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
+            }}
+                >
                 <input
                     type="text"
                     name="navn"
@@ -61,8 +64,8 @@ function ContactForm() {
                     }}
                 ></textarea>
 
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://24rørbergen.no/takk" />
+                <input type="hidden" name="_captcha" value="false"/>
+                <input type="hidden" name="_next" value="https://24rørbergen.no/takk"/>
 
                 <button type="submit" style={{
                     padding: '12px 24px',
