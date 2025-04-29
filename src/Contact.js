@@ -12,7 +12,7 @@ function Contact() {
                 <h2>Kontakt oss</h2>
                 <div style={{ fontSize: '20px', lineHeight: '2' }}>
                     <p>📞 <a href="tel:92696285" style={{ color: '#007BFF' }}>92696285</a></p>
-                    <p>📧 <a href="mailto:dognvakt@service.no" style={{ color: '#007BFF' }}>dognvakt@service.no</a></p>
+                    <p>📧 <a href="mailto:Karl.horn@gmail.com" style={{ color: '#007BFF' }}>Karl.horn@gmail.com</a></p>
                 </div>
             </section>
         </Fade>
