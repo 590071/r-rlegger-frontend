@@ -1,17 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 
 function ContactForm() {
+    const [formData, setFormData] = useState({
+        navn: '',
+        telefon: '',
+        melding: ''
+    });
+
+    const [status, setStatus] = useState('');
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await axios.post('http://localhost:8080/api/kontakt', formData); // <-- Endre hvis du bruker Vercel/Render
+            setStatus('✅ Meldingen ble sendt! Vi kontakter deg snart.');
+            setFormData({ navn: '', telefon: '', melding: '' });
+        } catch (error) {
+            setStatus('❌ Noe gikk galt. Prøv igjen senere.');
+        }
+    };
+
     return (
         <section style={{
             padding: '50px 20px',
             backgroundColor: '#f9f9f9',
             textAlign: 'center'
         }}>
-            <h2>Send oss en melding</h2>
+            <h2>Kontakt oss</h2>
 
             <form
-                action="https://formsubmit.co/el/sogjjo"
-                method="POST"
+                onSubmit={handleSubmit}
                 style={{
                     maxWidth: '500px',
                     margin: '0 auto',
@@ -25,6 +51,8 @@ function ContactForm() {
                     type="text"
                     name="navn"
                     placeholder="Navn"
+                    value={formData.navn}
+                    onChange={handleChange}
                     required
                     style={{
                         width: '100%',
@@ -34,10 +62,13 @@ function ContactForm() {
                         border: '1px solid #ccc'
                     }}
                 />
+
                 <input
-                    type="email"
-                    name="epost"
-                    placeholder="E-post"
+                    type="tel"
+                    name="telefon"
+                    placeholder="Telefonnummer"
+                    value={formData.telefon}
+                    onChange={handleChange}
                     required
                     style={{
                         width: '100%',
@@ -47,9 +78,12 @@ function ContactForm() {
                         border: '1px solid #ccc'
                     }}
                 />
+
                 <textarea
                     name="melding"
                     placeholder="Melding"
+                    value={formData.melding}
+                    onChange={handleChange}
                     required
                     style={{
                         width: '100%',
@@ -61,25 +95,21 @@ function ContactForm() {
                     }}
                 ></textarea>
 
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://24rørbergen.no/takk" />
-
-                <button
-                    type="submit"
-                    style={{
-                        padding: '12px 24px',
-                        backgroundColor: '#007BFF',
-                        color: 'white',
-                        fontSize: '16px',
-                        border: 'none',
-                        borderRadius: '4px',
-                        cursor: 'pointer',
-                        width: '100%'
-                    }}
-                >
+                <button type="submit" style={{
+                    padding: '12px 24px',
+                    backgroundColor: '#007BFF',
+                    color: 'white',
+                    fontSize: '16px',
+                    border: 'none',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    width: '100%'
+                }}>
                     Send melding
                 </button>
             </form>
+
+            <p style={{ marginTop: '20px', fontWeight: 'bold' }}>{status}</p>
         </section>
     );
 }

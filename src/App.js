@@ -1,23 +1,32 @@
-import React from 'react';
-import Hero from './Hero';
-import Hello from './Hello';
-import Services from "./Services";
-import Contact from "./Contact";
-import ContactForm from "./ContactForm";
-import Footer from "./Footer";
-import StickyPhoneButton from "./StickyPhoneButton";
-import Header from "./Header";
+import React from "react";
 
 function App() {
     return (
-        <div className="App">
-            <Header /> {/* 👈 NY */}
-            <Hero />
-            <Services />
-            <ContactForm /> {/* Her legger vi skjemaet */}
-            <Contact />
-            <Footer /> {/* 👈 Footer helt nederst */}
-            <StickyPhoneButton /> {/* Sticky knapp legges helt nederst */}
+        <div style={{ padding: "50px", textAlign: "center" }}>
+            <h2>Testskjema</h2>
+            <form action="https://formsubmit.co/el/sogjjo" method="POST">
+                <input
+                    type="text"
+                    name="navn"
+                    placeholder="Navn"
+                    required
+                    style={{ display: "block", margin: "10px auto", padding: "10px" }}
+                />
+                <input
+                    type="email"
+                    name="epost"
+                    placeholder="E-post"
+                    required
+                    style={{ display: "block", margin: "10px auto", padding: "10px" }}
+                />
+                <textarea
+                    name="melding"
+                    placeholder="Melding"
+                    required
+                    style={{ display: "block", margin: "10px auto", padding: "10px" }}
+                ></textarea>
+                <button type="submit">Send</button>
+            </form>
         </div>
     );
 }
