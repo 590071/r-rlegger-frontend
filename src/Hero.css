@@ -21,35 +21,18 @@
 }
 
 .ring-knapp {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    display: inline-block;
     padding: 15px 30px;
-    font-size: 18px;
-    background-color: #28a745; /* Grønn */
+    background-color: #007bff;
     color: white;
+    font-size: 18px;
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    border-radius: 999px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
 
 .ring-knapp:hover {
-    background-color: #34c759; /* Lysere grønn på hover */
-}
-
-.kontakt-knapp {
-    margin-top: 10px;
-    padding: 12px 24px;
-    font-size: 16px;
-    background-color: white;
-    color: #007BFF;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.kontakt-knapp:hover {
-    background-color: #007BFF;
-    color: white;
+    background-color: #0056b3;
 }
