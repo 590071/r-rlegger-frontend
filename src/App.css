@@ -1,54 +1,32 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Layout wrapper */
+#root, .app-wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+main {
+  flex: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+/* Grunnstil */
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
   background-color: #ffffff;
-  color: #333333;
+  color: #212529;
+  line-height: 1.6;
 }
 
 h1, h2 {
   margin-bottom: 0.5em;
+  font-weight: 700;
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2.8em;
+  color: #111;
 }
 
 h2 {
@@ -56,60 +34,173 @@ h2 {
   color: #007BFF;
 }
 
-section {
-  padding: 60px 20px;
-}
-
-button {
-  margin-top: 20px;
-  padding: 12px 24px;
-  font-size: 18px;
-  border: none;
-  border-radius: 5px;
-  background-color: #ffffff;
-  color: #007BFF;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-button:hover {
-  background-color: #0056b3;
-  color: #ffffff;
-}
-
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 a:hover {
   text-decoration: underline;
 }
+
+/* Hero-seksjon */
+.hero {
+  background: linear-gradient(to bottom right, #007BFF, #0056b3);
+  color: white;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Ring-knapp */
+.ring-knapp {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #00c853;
+  color: white;
+  font-size: 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease;
+}
+
+.ring-knapp:hover {
+  background-color: #00a043;
+}
+
+/* Tjenester */
+.tjenester {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #f8f9fa;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.tjenester ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tjenester li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.95rem;
+  background-color: #f1f3f5;
+  margin-top: 60px;
+  color: #555;
+}
+
+/* Mobilvennlighet */
 @media (max-width: 768px) {
-  body {
-    font-size: 16px;
+  h1 {
+    font-size: 2rem;
   }
 
-  .hero h1 {
-    font-size: 32px;
-  }
-
-  .hero p {
-    font-size: 18px;
-  }
-
-  .ring-knapp, .kontakt-knapp {
+  .ring-knapp {
     width: 90%;
-    font-size: 18px;
-    padding: 12px 0;
-    margin: 10px auto;
+    padding: 12px;
+    font-size: 17px;
     display: block;
+    margin: 20px auto;
   }
 
-  section {
-    padding: 40px 15px;
+  .tjenester {
+    margin: 20px;
+    padding: 20px;
   }
 
-  ul {
-    font-size: 18px;
+  .hero {
+    padding: 60px 15px;
   }
+}
+
+.logo {
+  height: 50px;
+  margin-right: 15px;
+}
+
+.brand-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+.hero-logo {
+  height: 100px;
+  max-height: 20vh;
+  margin-bottom: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .hero-logo {
+    height: 70px;
+  }
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  height: 60px;
+}
+
+.brand-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+.hero {
+  background: linear-gradient(to bottom right, #007BFF, #0056b3);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.hero-top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 20px;
+}
+
+.hero-logo {
+  height: 60px;
+}
+
+.brand-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
