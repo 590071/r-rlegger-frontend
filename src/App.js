@@ -2,24 +2,33 @@ import React from 'react';
 import './App.css';
 
 function App() {
+    const handleRingKlikk = () => {
+        if (window.gtag) {
+            window.gtag('event', 'ring_knapp_klikk');
+        }
+    };
+
     return (
         <div className="app-wrapper">
+            <header className="hero">
+                <div className="hero-header">
+                    <img src="/logo.png" alt="24rørBergen - Rørlegger i Bergen"/>
+
+                    <span className="brand-name">24rørBergen</span>
+                </div>
+
+                <h1>Døgnåpen rørlegger i Bergen</h1>
+                <p>Rask hjelp ved lekkasjer – hele døgnet</p>
+                <a
+                    href="tel:41288716"
+                    className="ring-knapp"
+                    onClick={handleRingKlikk}
+                >
+                    📞 Ring oss nå
+                </a>
+            </header>
+
             <main>
-                <section className="hero">
-                    <div className="hero-top">
-                        <div className="logo-container">
-                            <img src="/logo.png" alt="24rørBergen logo" className="hero-logo"/>
-                            <span className="brand-name">24rørBergen</span>
-                        </div>
-                    </div>
-
-                    <div className="hero-content">
-                        <h1>Døgnåpen rørlegger i Bergen</h1>
-                        <p className="slogan">Rask hjelp ved lekkasjer – hele døgnet</p>
-                        <a href="tel:41288716" className="ring-knapp">📞 Ring oss nå</a>
-                    </div>
-                </section>
-
                 <section className="tjenester">
                     <h2>Våre Tjenester</h2>
                     <ul>
