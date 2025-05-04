@@ -12,7 +12,8 @@ function App() {
         <div className="app-wrapper">
             <header className="hero">
                 <div className="hero-header">
-                    <img src="/logo.png" alt="24rørBergen - Rørlegger i Bergen"/>
+                    <img src="/logo.png" alt="24rørBergen logo" className="logo"/>
+
 
                     <span className="brand-name">24rørBergen</span>
                 </div>
