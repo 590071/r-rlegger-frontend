@@ -3,30 +3,22 @@ import React from "react";
 function App() {
     return (
         <div style={{ padding: "50px", textAlign: "center" }}>
-            <h2>Testskjema</h2>
-            <form action="https://formsubmit.co/el/sogjjo" method="POST">
-                <input
-                    type="text"
-                    name="navn"
-                    placeholder="Navn"
-                    required
-                    style={{ display: "block", margin: "10px auto", padding: "10px" }}
-                />
-                <input
-                    type="email"
-                    name="epost"
-                    placeholder="E-post"
-                    required
-                    style={{ display: "block", margin: "10px auto", padding: "10px" }}
-                />
-                <textarea
-                    name="melding"
-                    placeholder="Melding"
-                    required
-                    style={{ display: "block", margin: "10px auto", padding: "10px" }}
-                ></textarea>
-                <button type="submit">Send</button>
-            </form>
+            <h1>Velkommen til Rørlegger Bergen</h1>
+            <a
+                href="tel:12345678"
+                style={{
+                    display: "inline-block",
+                    padding: "15px 30px",
+                    backgroundColor: "#007bff",
+                    color: "white",
+                    fontSize: "18px",
+                    borderRadius: "999px",
+                    textDecoration: "none",
+                    marginTop: "20px",
+                }}
+            >
+                📞 Ring oss nå
+            </a>
         </div>
     );
 }
