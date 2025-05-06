@@ -33,6 +33,20 @@ function App() {
                     📞 Ring oss nå
                 </a>
             </header>
+            <section className="kontakt">
+                <h2>Kontakt oss</h2>
+                <form action="https://formsubmit.co/77knudsen@gmail.com" method="POST">
+                    <input type="text" name="navn" placeholder="Navn" required/>
+                    <input type="email" name="epost" placeholder="E-post" required/>
+                    <textarea name="melding" placeholder="Skriv meldingen din her..." rows="5" required></textarea>
+
+                    {/* Skjul Formsubmit-epostbekreftelse og spamfelt */}
+                    <input type="hidden" name="_captcha" value="false"/>
+                    <input type="hidden" name="_next" value="https://www.24rørbergen.no/takk"/>
+
+                    <button type="submit">Send melding</button>
+                </form>
+            </section>
 
             <main>
                 <section className="tjenester">
