@@ -47,7 +47,14 @@ function App() {
             </main>
 
             <footer>
-                © 2025 Rørlegger Bergen – Døgnvakt & Service
+                <footer>
+                    <p><strong>24rørBergen</strong></p>
+                    <p>Telefon: <a href="tel:+4741288716">+47 412 88 716</a></p>
+                    <p>E-post: <a href="mailto:karl.horn@gmail.com">karl.horn@gmail.com</a></p>
+                    <p>Bergen, Norge</p>
+                    <p>© 2025 Rørlegger Bergen – Døgnvakt & Service</p>
+                </footer>
+
             </footer>
         </div>
     );
