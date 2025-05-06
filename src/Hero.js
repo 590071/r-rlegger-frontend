@@ -21,7 +21,7 @@ function Hero() {
             <div className="hero-content">
                 <h1>Rørlegger Bergen – Døgnvakt 24/7</h1>
                 <p>Er du uten vann eller har lekkasje? Vi rykker ut – hele døgnet!</p>
-                <a href="tel:12345678" className="cta-btn">📞 Ring oss nå</a>
+                <a href="tel:41288716" className="cta-btn">📞 Ring oss nå</a>
             </div>
         </section>
 

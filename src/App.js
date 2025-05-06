@@ -19,7 +19,12 @@ function App() {
                 </div>
 
                 <h1>Døgnåpen rørlegger i Bergen</h1>
-                <p>Rask hjelp ved lekkasjer – hele døgnet</p>
+                <p>
+                    Trenger du <strong>akutt rørleggerhjelp i Bergen</strong>? Vi tilbyr døgnvakt,
+                    hjelp med <strong>lekkasje</strong>, <strong>rørbrudd</strong> og installasjon av
+                    varmtvannsbereder – raskt og profesjonelt.
+                </p>
+
                 <a
                     href="tel:41288716"
                     className="ring-knapp"
