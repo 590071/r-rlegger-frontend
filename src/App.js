@@ -2,69 +2,73 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-    const [showModal, setShowModal] = useState(false);
+    const [showForm, setShowForm] = useState(false);
+
+    const toggleForm = () => setShowForm(!showForm);
 
     return (
-        <div className="app-wrapper">
-            <header className="hero">
-                <img src="/logo.png" alt="24rørBergen logo" className="hero-logo" />
-                <h1>Rørleggervakt Bergen</h1>
-                <p className="subheading">Døgnvakt – ingen ventetid</p>
+        <div className="app">
+            <header className="header">
+                <img src="/logo.png" alt="24rørBergen logo" className="logo" />
+                <h1 className="brand">24rørBergen</h1>
             </header>
 
-            <section className="cta-outside">
-                <button onClick={() => setShowModal(true)} className="btn-akutt">
-                    🚨 Rørleggervakt nå – KLIKK HER
-                </button>
-                <a href="tel:41288716" className="btn-ring">📞 Ring rørlegger nå</a>
+            <section className="hero">
+                <h2>Rørleggervakt i Bergen</h2>
+                <p className="subtext">Døgnvakt – ingen ventetid</p>
+                <div className="cta-buttons">
+                    <button onClick={toggleForm} className="red-button">
+                        🔧 Rørleggervakt nå – KLIKK HER
+                    </button>
+                    <a href="tel:41288716" className="green-button">
+                        📞 Ring rørlegger nå
+                    </a>
+                </div>
             </section>
 
-            <main className="info-sections">
-                <section>
-                    <h2>Akutt hjelp ved vannskade</h2>
-                    <p>
-                        Vi er tilgjengelig 24/7 og klar til å hjelpe med lekkasjer, vannskader og rørproblemer – uten ventetid. Trygt, raskt og pålitelig.
-                    </p>
+            {showForm && (
+                <section className="form-section">
+                    <h3>Kontakt oss</h3>
+                    <form action="https://formsubmit.co/post@fagfolk24service.no" method="POST" encType="multipart/form-data">
+                        <input type="text" name="Fornavn" placeholder="Fornavn" required />
+                        <input type="text" name="Etternavn" placeholder="Etternavn" required />
+                        <input type="email" name="E-post" placeholder="Din e-postadresse" required />
+                        <input type="tel" name="Telefonnummer" placeholder="Telefonnummer" required />
+                        <input type="text" name="Adresse" placeholder="Adresse (hvor trenger du hjelp?)" required />
+                        <textarea name="Beskrivelse" placeholder="Beskriv problemet eller nødsituasjonen her..." required />
+                        <input type="file" name="Bilde (valgfritt)" />
+                        <button type="submit">Send forespørsel</button>
+                    </form>
                 </section>
-            </main>
+            )}
 
-            <footer>
-                <p>© 2025 24rørBergen – Rørleggervakt & Service</p>
+            <section className="info">
+                <h2>Vannskade? Vi er klare til å hjelpe deg</h2>
                 <p>
-                    E-post: <a href="mailto:post@fagfolk24service.no">post@fagfolk24service.no</a> – Tlf: <a href="tel:41288716">412 88 716</a>
+                    Når rør sprekker eller vann strømmer ukontrollert, er det viktig å handle raskt. 24rørBergen tilbyr akutt
+                    rørleggervakt og rask respons i hele Bergen.
                 </p>
+
+                <h3>Akutt hjelp – 24/7</h3>
+                <p>
+                    Vi rykker ut hele døgnet og sørger for effektiv reparasjon av lekkasjer og skader på rør. Våre rørleggere er
+                    klare når du trenger det mest.
+                </p>
+
+                <h3>Trygghet og fagkunnskap</h3>
+                <p>
+                    Med lang erfaring og god lokal kunnskap gir vi deg trygg hjelp med små og store utfordringer. Forebygging,
+                    reparasjon og rådgivning – vi er her for deg.
+                </p>
+            </section>
+
+            <footer className="footer">
+                <p>© 2025 24rørBergen – Rørleggervakt i Bergen | post@fagfolk24service.no</p>
             </footer>
 
-            {showModal && (
-                <div className="modal-backdrop" onClick={() => setShowModal(false)}>
-                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                        <h2>Kontakt rørleggervakten</h2>
-                        <form
-                            action="https://formsubmit.co/post@fagfolk24service.no"
-                            method="POST"
-                            encType="multipart/form-data"
-                        >
-                            <input type="text" name="Fornavn" placeholder="Fornavn" required />
-                            <input type="text" name="Etternavn" placeholder="Etternavn" required />
-                            <input type="email" name="E-post" placeholder="Din e-postadresse" required />
-                            <input type="tel" name="Telefonnummer" placeholder="Telefonnummer" required />
-                            <input type="text" name="Adresse" placeholder="Adresse (hvor trenger du hjelp?)" required />
-                            <textarea name="Beskrivelse" placeholder="Beskriv problemet eller nødsituasjonen her..." required></textarea>
-                            <label style={{ marginBottom: "8px" }}>
-                                Last opp bilde (valgfritt):
-                                <input type="file" name="Vedlegg" />
-                            </label>
-
-                            <input type="hidden" name="_cc" value="karl.horn@gmail.com" />
-                            <input type="hidden" name="_next" value="https://www.24rørbergen.no/takk" />
-                            <input type="hidden" name="_captcha" value="false" />
-
-                            <button type="submit" className="btn-ring">Send forespørsel</button>
-                            <button type="button" onClick={() => setShowModal(false)} className="lukk-knapp">Lukk</button>
-                        </form>
-                    </div>
-                </div>
-            )}
+            <a href="tel:41288716" className="sticky-call-button">
+                📞 Ring rørlegger nå
+            </a>
         </div>
     );
 }
