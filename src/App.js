@@ -1,75 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-    const handleRingKlikk = () => {
-        if (window.gtag) {
-            window.gtag('event', 'ring_knapp_klikk');
-        }
-    };
+    const [visSkjema, setVisSkjema] = useState(false);
+
+    const åpneSkjema = () => setVisSkjema(true);
+    const lukkSkjema = () => setVisSkjema(false);
 
     return (
         <div className="app-wrapper">
             <header className="hero">
-                <div className="hero-header">
-                    <img src="/logo.png" alt="24rørBergen logo" className="logo"/>
-
-
-                    <span className="brand-name">24rørBergen</span>
-                </div>
-
-                <h1>Døgnåpen rørlegger i Bergen</h1>
-                <p>
-                    Trenger du <strong>akutt rørleggerhjelp i Bergen</strong>? Vi tilbyr døgnvakt,
-                    hjelp med <strong>lekkasje</strong>, <strong>rørbrudd</strong> og installasjon av
-                    varmtvannsbereder – raskt og profesjonelt.
-                </p>
-
-                <a
-                    href="tel:41288716"
-                    className="ring-knapp"
-                    onClick={handleRingKlikk}
-                >
-                    📞 Ring oss nå
-                </a>
+                <img src="/logo.png" alt="24rørBergen logo" className="hero-logo" />
+                <h1>Rørleggervakt Bergen</h1>
+                <p className="subheading">Døgnvakt – ingen ventetid</p>
             </header>
-            <section className="kontakt">
-                <h2>Kontakt oss</h2>
-                <form action="https://formsubmit.co/77knudsen@gmail.com" method="POST">
-                    <input type="text" name="navn" placeholder="Navn" required/>
-                    <input type="email" name="epost" placeholder="E-post" required/>
-                    <textarea name="melding" placeholder="Skriv meldingen din her..." rows="5" required></textarea>
 
-                    {/* Skjul Formsubmit-epostbekreftelse og spamfelt */}
-                    <input type="hidden" name="_captcha" value="false"/>
-                    <input type="hidden" name="_next" value="https://www.24rørbergen.no/takk"/>
-
-                    <button type="submit">Send melding</button>
-                </form>
+            <section className="cta-outside">
+                <button className="btn-akutt" onClick={åpneSkjema}>🚨 Rørleggervakt nå – KLIKK HER</button>
+                <a href="tel:41288716" className="btn-ring">📞 Ring rørlegger nå</a>
             </section>
 
-            <main>
-                <section className="tjenester">
-                    <h2>Våre Tjenester</h2>
-                    <ul>
-                        <li>🔧 24/7 Rørlegger Døgnvakt</li>
-                        <li>💦 Reparasjon av lekkasjer</li>
-                        <li>🔥 Installasjon av varmtvannsberedere</li>
-                        <li>🏠 Hjelp ved akutte problemer</li>
-                    </ul>
+            <main className="info-sections">
+                <section>
+                    <h2>Akutt hjelp ved vannskade</h2>
+                    <p>
+                        Vi er tilgjengelig 24/7 og klar til å hjelpe med lekkasjer, vannskader og rørproblemer – uten ventetid. Trygt, raskt og pålitelig.
+                    </p>
                 </section>
             </main>
 
             <footer>
-                <footer>
-                    <p><strong>24rørBergen</strong></p>
-                    <p>Telefon: <a href="tel:+4741288716">+47 412 88 716</a></p>
-                    <p>E-post: <a href="mailto:karl.horn@gmail.com">karl.horn@gmail.com</a></p>
-                    <p>Bergen, Norge</p>
-                    <p>© 2025 Rørlegger Bergen – Døgnvakt & Service</p>
-                </footer>
-
+                <p>© 2025 24rørBergen – Rørleggervakt & Service</p>
+                <p>
+                    E-post: <a href="mailto:post@fagfolk24service.no">post@fagfolk24service.no</a> – Tlf: <a href="tel:41288716">412 88 716</a>
+                </p>
             </footer>
+
+            {visSkjema && (
+                <div className="modal-bakgrunn" onClick={lukkSkjema}>
+                    <div className="modal-innhold" onClick={e => e.stopPropagation()}>
+                        <h2>Kontakt rørleggervakten</h2>
+                        <form action="https://formsubmit.co/post@fagfolk24service.no" method="POST">
+                            <input type="text" name="Navn" placeholder="Fullt navn" required />
+                            <input type="email" name="E-post" placeholder="Din e-post" required />
+                            <input type="tel" name="Telefonnummer" placeholder="Telefonnummer" required />
+                            <textarea name="Beskrivelse" placeholder="Hva trenger du hjelp med?" required></textarea>
+
+                            <input type="hidden" name="_cc" value="karl.horn@gmail.com" />
+                            <input type="hidden" name="_next" value="https://www.24rørbergen.no/takk" />
+                            <input type="hidden" name="_captcha" value="false" />
+
+                            <button type="submit" className="btn-ring">Send henvendelse</button>
+                            <button type="button" onClick={lukkSkjema} className="lukk-knapp">Lukk</button>
+                        </form>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
