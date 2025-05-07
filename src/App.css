@@ -184,3 +184,74 @@ footer a:hover {
     padding: 20px;
   }
 }
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: #007BFF;
+  text-align: center;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.lukk-knapp {
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.lukk-knapp:hover {
+  background-color: #bbb;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.modal-content input[type="file"] {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding: 8px;
+}
+
+.modal-content textarea {
+  min-height: 120px;
+  resize: vertical;
+}

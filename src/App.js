@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-    const [visSkjema, setVisSkjema] = useState(false);
-
-    const åpneSkjema = () => setVisSkjema(true);
-    const lukkSkjema = () => setVisSkjema(false);
+    const [showModal, setShowModal] = useState(false);
 
     return (
         <div className="app-wrapper">
@@ -16,7 +13,9 @@ function App() {
             </header>
 
             <section className="cta-outside">
-                <button className="btn-akutt" onClick={åpneSkjema}>🚨 Rørleggervakt nå – KLIKK HER</button>
+                <button onClick={() => setShowModal(true)} className="btn-akutt">
+                    🚨 Rørleggervakt nå – KLIKK HER
+                </button>
                 <a href="tel:41288716" className="btn-ring">📞 Ring rørlegger nå</a>
             </section>
 
@@ -36,22 +35,32 @@ function App() {
                 </p>
             </footer>
 
-            {visSkjema && (
-                <div className="modal-bakgrunn" onClick={lukkSkjema}>
-                    <div className="modal-innhold" onClick={e => e.stopPropagation()}>
+            {showModal && (
+                <div className="modal-backdrop" onClick={() => setShowModal(false)}>
+                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                         <h2>Kontakt rørleggervakten</h2>
-                        <form action="https://formsubmit.co/post@fagfolk24service.no" method="POST">
-                            <input type="text" name="Navn" placeholder="Fullt navn" required />
-                            <input type="email" name="E-post" placeholder="Din e-post" required />
+                        <form
+                            action="https://formsubmit.co/post@fagfolk24service.no"
+                            method="POST"
+                            encType="multipart/form-data"
+                        >
+                            <input type="text" name="Fornavn" placeholder="Fornavn" required />
+                            <input type="text" name="Etternavn" placeholder="Etternavn" required />
+                            <input type="email" name="E-post" placeholder="Din e-postadresse" required />
                             <input type="tel" name="Telefonnummer" placeholder="Telefonnummer" required />
-                            <textarea name="Beskrivelse" placeholder="Hva trenger du hjelp med?" required></textarea>
+                            <input type="text" name="Adresse" placeholder="Adresse (hvor trenger du hjelp?)" required />
+                            <textarea name="Beskrivelse" placeholder="Beskriv problemet eller nødsituasjonen her..." required></textarea>
+                            <label style={{ marginBottom: "8px" }}>
+                                Last opp bilde (valgfritt):
+                                <input type="file" name="Vedlegg" />
+                            </label>
 
                             <input type="hidden" name="_cc" value="karl.horn@gmail.com" />
                             <input type="hidden" name="_next" value="https://www.24rørbergen.no/takk" />
                             <input type="hidden" name="_captcha" value="false" />
 
-                            <button type="submit" className="btn-ring">Send henvendelse</button>
-                            <button type="button" onClick={lukkSkjema} className="lukk-knapp">Lukk</button>
+                            <button type="submit" className="btn-ring">Send forespørsel</button>
+                            <button type="button" onClick={() => setShowModal(false)} className="lukk-knapp">Lukk</button>
                         </form>
                     </div>
                 </div>
