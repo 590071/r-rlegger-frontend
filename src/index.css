@@ -21,11 +21,11 @@ h1, h2, h3 {
 
 /* Hero */
 .hero {
-  background-color: white;
+  background: white;
   color: #111;
   padding: 60px 20px;
   text-align: center;
-  border-bottom: 5px solid #007BFF; /* valgfritt */
+  border-bottom: 5px solid #007BFF;
 }
 
 .logo {
@@ -46,14 +46,53 @@ h1, h2, h3 {
 
 /* Knapper */
 .knapp-ring,
+.knapp-kontakt,
+.ring-knapp,
+.kontakt-knapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 36px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  margin: 20px auto;
+  min-width: 260px;
+  height: 60px;
+}
 
-
-.knapp-ring {
+.knapp-ring,
+.ring-knapp {
   background-color: #00c853;
 }
 
-.knapp-kontakt {
-  background-color: #d32f2f;
+.knapp-kontakt,
+.kontakt-knapp {
+  background-color: #03a9f4;
+}
+
+.knapp-ring:hover,
+.ring-knapp:hover {
+  background-color: #00b357;
+}
+
+.knapp-kontakt:hover,
+.kontakt-knapp:hover {
+  background-color: #0091dd;
+}
+
+.knapp-ring i,
+.knapp-kontakt i,
+.ring-knapp i,
+.kontakt-knapp i {
+  margin-right: 12px;
+  font-size: 1.4rem;
 }
 
 /* Innhold */
@@ -129,39 +168,11 @@ h1, h2, h3 {
   cursor: pointer;
 }
 
-
-
-
-@media (max-width: 768px) {
-  .sticky-kontakt-knapp {
-    display: block;
-  }
-
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .logo {
-    width: 100px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.5rem;
-  }
-
-  .logo {
-    width: 80px;
-  }
-
-  .sticky-kontakt-knapp {
-    bottom: 70px;
-  }
+.tilgjengelighet {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 /* Footer */
@@ -172,78 +183,4 @@ footer {
   color: #555;
   background-color: #f1f1f1;
   margin-top: 60px;
-}
-.sticky-ring-knapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #00c853;
-  color: white;
-  padding: 14px 22px;
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 1rem;
-  z-index: 999;
-  text-decoration: none;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .sticky-ring-knapp {
-    display: block;
-  }
-}
-.alarm-banner {
-  text-align: center;
-  margin: 40px auto 20px;
-  max-width: 700px;
-  padding: 0 20px;
-}
-
-.alarm-knapp {
-  background-color: #d32f2f;
-  color: white;
-  font-size: 1.1rem;
-  font-weight: bold;
-  padding: 16px 28px;
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-
-.alarm-undertekst {
-  font-size: 0.95rem;
-  color: #333;
-  margin-bottom: 30px;
-}
-
-.ring-info {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.ring-info p {
-  margin: 5px 0;
-  font-size: 1.05rem;
-}
-
-.telefonnummer {
-  font-size: 1.6rem;
-  color: #004d40;
-}
-
-.ring-knapp-gronn {
-  background-color: #00c853;
-  color: white;
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-decoration: none;
-  display: inline-block;
-  padding: 14px 30px;
-  border-radius: 16px;
-  margin-top: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
