@@ -21,11 +21,11 @@ h1, h2, h3 {
 
 /* Hero */
 .hero {
-  background: linear-gradient(to right, #007bff, #0056b3);
-  color: white;
+  background-color: white;
+  color: #111;
   padding: 60px 20px;
   text-align: center;
-  border-bottom: 5px solid #007BFF;
+  border-bottom: 5px solid #007BFF; /* valgfritt */
 }
 
 .logo {
@@ -46,20 +46,7 @@ h1, h2, h3 {
 
 /* Knapper */
 .knapp-ring,
-.knapp-kontakt {
-  display: inline-block;
-  padding: 14px 28px;
-  border-radius: 40px;
-  font-weight: bold;
-  font-size: 1rem;
-  color: white;
-  text-decoration: none;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  border: none;
-  cursor: pointer;
-  margin: 10px;
-  text-align: center;
-}
+
 
 .knapp-ring {
   background-color: #00c853;
@@ -142,20 +129,8 @@ h1, h2, h3 {
   cursor: pointer;
 }
 
-/* Sticky kontaktknapp (mobil) */
-.sticky-kontakt-knapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #d32f2f;
-  color: white;
-  padding: 14px 22px;
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 1rem;
-  z-index: 999;
-  display: none;
-}
+
+
 
 @media (max-width: 768px) {
   .sticky-kontakt-knapp {
@@ -197,4 +172,78 @@ footer {
   color: #555;
   background-color: #f1f1f1;
   margin-top: 60px;
+}
+.sticky-ring-knapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #00c853;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+  z-index: 999;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sticky-ring-knapp {
+    display: block;
+  }
+}
+.alarm-banner {
+  text-align: center;
+  margin: 40px auto 20px;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.alarm-knapp {
+  background-color: #d32f2f;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 16px 28px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.alarm-undertekst {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.ring-info {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.ring-info p {
+  margin: 5px 0;
+  font-size: 1.05rem;
+}
+
+.telefonnummer {
+  font-size: 1.6rem;
+  color: #004d40;
+}
+
+.ring-knapp-gronn {
+  background-color: #00c853;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 16px;
+  margin-top: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
