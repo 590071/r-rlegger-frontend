@@ -45,14 +45,12 @@ h1, h2, h3 {
 }
 
 /* Knapper */
-.knapp-ring,
-.knapp-kontakt,
-.ring-knapp,
-.kontakt-knapp {
+.kontakt-knapp,
+.ring-knapp {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 18px 36px;
+
   font-size: 1.2rem;
   font-weight: bold;
   color: white;
@@ -64,8 +62,16 @@ h1, h2, h3 {
   transition: background-color 0.3s ease;
   margin: 20px auto;
   min-width: 260px;
-  height: 60px;
+  height: 50px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  line-height: 1.2;
 }
+
 
 .knapp-ring,
 .ring-knapp {
@@ -183,4 +189,84 @@ footer {
   color: #555;
   background-color: #f1f1f1;
   margin-top: 60px;
+}
+.top-meny {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+/* Standard meny (desktop) */
+.meny-innhold {
+  display: flex;
+  gap: 20px;
+}
+
+.meny-innhold a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  padding: 6px 10px;
+}
+
+.meny-innhold a:hover {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+/* Hamburger */
+#meny-toggle,
+.meny-ikon {
+  display: none;
+}
+
+/* Mobilvisning */
+@media (max-width: 768px) {
+  .meny-ikon {
+    display: block;
+    font-size: 26px;
+    background: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .meny-innhold {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    padding: 10px;
+    z-index: 100;
+  }
+
+  #meny-toggle:checked + .meny-ikon + .meny-innhold {
+    display: flex;
+  }
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-tekst {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: black;
 }

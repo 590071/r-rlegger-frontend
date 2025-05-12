@@ -3,27 +3,48 @@ import './index.css';
 
 function App() {
     const [showModal, setShowModal] = useState(false);
+    const [showAbout, setShowAbout] = useState(false);
+    const [showServices, setShowServices] = useState(false);
 
     const handleOpenModal = () => setShowModal(true);
     const handleCloseModal = () => setShowModal(false);
 
+    const handleOpenAbout = () => setShowAbout(true);
+    const handleCloseAbout = () => setShowAbout(false);
+
+    const handleOpenServices = () => setShowServices(true);
+    const handleCloseServices = () => setShowServices(false);
+
     return (
         <div>
             <section className="hero">
+                <header className="top-meny">
+                    <div className="logo-container">
+                        <img src="/logo.png" alt="Logo" className="logo" />
+                        <span className="brand-tekst">24rørBergen</span>
+                    </div>
 
-                <h1><img src="/logo.png" alt="24rørBergen logo" className="logo" />24RørBergen</h1>
+                    <input type="checkbox" id="meny-toggle" />
+                    <label htmlFor="meny-toggle" className="meny-ikon">☰</label>
+
+                    <nav className="meny-innhold">
+                        <a href="#" onClick={(e) => { e.preventDefault(); handleOpenAbout(); }}>Om oss</a>
+                        <a href="#" onClick={(e) => { e.preventDefault(); handleOpenServices(); }}>Tjenester</a>
+                        <a href="#" onClick={(e) => { e.preventDefault(); handleOpenModal(); }}>Kontakt</a>
+                    </nav>
+                </header>
+
                 <h2>Akutt rørleggerhjelp i Bergen</h2>
             </section>
 
             <div className="container">
                 <div className="knappe-container">
-                    <button onClick={handleOpenModal} className="knapp kontakt-knapp">
-                        💧 Kontakt oss nå
+                    <button className="kontakt-knapp" onClick={handleOpenModal}>Kontakt oss nå</button>
+                    <p>Eller ring rørlegger direkte.</p>
+                    <button className="ring-knapp" onClick={() => window.location.href = 'tel:41288716'}>
+                        Ring rørlegger
                     </button>
-                    <p className="undertekst">Eller ring rørlegger direkte.</p> <p> Vi er tilgjengelige hele døgnet.</p>
-                    <a href="tel:41288716" className="ring-knapp">
-                        <i>📞</i> Ring rørlegger
-                    </a>
+                    <p>Vi er tilgjengelig hele døgnet.</p>
                 </div>
 
                 <section className="info-seksjon">
@@ -55,8 +76,6 @@ function App() {
                 </section>
             </div>
 
-
-
             {showModal && (
                 <div className="modal active" onClick={handleCloseModal}>
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -69,30 +88,10 @@ function App() {
                         >
                             <input type="text" name="Fornavn" placeholder="Fornavn" required />
                             <input type="text" name="Etternavn" placeholder="Etternavn" required />
-                            <input
-                                type="email"
-                                name="Epost"
-                                placeholder="Din e-postadresse"
-                                required
-                            />
-                            <input
-                                type="tel"
-                                name="Telefonnummer"
-                                placeholder="Telefonnummer"
-                                required
-                            />
-                            <input
-                                type="text"
-                                name="Adresse"
-                                placeholder="Adresse (hvor trenger du hjelp?)"
-                                required
-                            />
-                            <textarea
-                                name="Beskrivelse"
-                                rows="5"
-                                placeholder="Beskrivelse av problemet"
-                                required
-                            ></textarea>
+                            <input type="email" name="Epost" placeholder="Din e-postadresse" required />
+                            <input type="tel" name="Telefonnummer" placeholder="Telefonnummer" required />
+                            <input type="text" name="Adresse" placeholder="Adresse (hvor trenger du hjelp?)" required />
+                            <textarea name="Beskrivelse" rows="5" placeholder="Beskrivelse av problemet" required></textarea>
                             <input type="file" name="bilde" accept="image/*" />
                             <button type="submit">Send forespørsel</button>
                         </form>
